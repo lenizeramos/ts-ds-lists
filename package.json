@@ -1,0 +1,12 @@
+{
+  "name": "ts-ds-linked-lists-lenizeramos",
+  "version": "1.0.0",
+  "description": "-   Create 1 commit per task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
