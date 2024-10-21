@@ -46,10 +46,17 @@ class LinkedList {
         }
         return result;
     }
+    insertAtBackMany(vals) {
+        for (const val of vals) {
+            this.insertAtBack(val);
+        }
+    }
 }
 const list = new LinkedList();
 list.insertAtBack(1);
 list.insertAtBack(2);
 list.insertAtBack(3);
 console.log(list.average());
+console.log(list.toArr());
+list.insertAtBackMany([4, 5, 6]);
 console.log(list.toArr());

@@ -53,11 +53,17 @@ class LinkedList<T> {
     let current = this.head;
 
     while (current) {
-        result.push(current.value);
-        current = current.next;
+      result.push(current.value);
+      current = current.next;
     }
 
     return result;
+  }
+
+  insertAtBackMany(vals: T[]): void {
+    for (const val of vals) {
+        this.insertAtBack(val);
+    }
 }
 }
 
@@ -66,4 +72,6 @@ list.insertAtBack(1);
 list.insertAtBack(2);
 list.insertAtBack(3);
 console.log(list.average());
-console.log(list.toArr());  
+console.log(list.toArr());
+list.insertAtBackMany([4, 5, 6]);
+console.log(list.toArr())
