@@ -62,16 +62,37 @@ class LinkedList<T> {
 
   insertAtBackMany(vals: T[]): void {
     for (const val of vals) {
-        this.insertAtBack(val);
+      this.insertAtBack(val);
     }
-}
+  }
+
+  removeBack(): void {
+    if (!this.head) {
+      return;
+    }
+
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+
+    let current = this.head;
+    while (current.next && current.next.next) {
+      current = current.next;
+    }
+    current.next = null;
+  }
 }
 
 const list = new LinkedList<number>();
 list.insertAtBack(1);
 list.insertAtBack(2);
 list.insertAtBack(3);
+console.log(list);
 console.log(list.average());
 console.log(list.toArr());
 list.insertAtBackMany([4, 5, 6]);
-console.log(list.toArr())
+console.log(list.toArr());
+list.removeBack();
+console.log(list.toArr());
+console.log(list);
