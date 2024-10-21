@@ -47,6 +47,18 @@ class LinkedList<T> {
     }
     current.next = newNode;
   }
+
+  toArr(): T[] {
+    const result: T[] = [];
+    let current = this.head;
+
+    while (current) {
+        result.push(current.value);
+        current = current.next;
+    }
+
+    return result;
+}
 }
 
 const list = new LinkedList<number>();
@@ -54,3 +66,4 @@ list.insertAtBack(1);
 list.insertAtBack(2);
 list.insertAtBack(3);
 console.log(list.average());
+console.log(list.toArr());  
